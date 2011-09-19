@@ -20,7 +20,7 @@ class Args
     {
         return array(
             self::BOOLEAN => array('filter' => FILTER_VALIDATE_BOOLEAN),
-            self::STRING => array('filter' => FILTER_SANITIZE_STRING),
+            self::STRING  => array('filter' => FILTER_SANITIZE_STRING),
             self::INTEGER => array('filter' => FILTER_SANITIZE_NUMBER_INT),
             self::ARRAY_STRING => array('filter' => FILTER_SANITIZE_STRING, 'flags' => FILTER_FORCE_ARRAY),
             self::ARRAY_NUMBER => array('filter' => FILTER_VALIDATE_INT, 'flags' => FILTER_FORCE_ARRAY),
