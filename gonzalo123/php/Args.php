@@ -5,6 +5,8 @@ class Args
     {
         if ($input == '-l') {
             $output = array('l' => true);
+        } elseif ($input == '-p') {
+            $output = array('p' => true);
         }
 
         return $output;

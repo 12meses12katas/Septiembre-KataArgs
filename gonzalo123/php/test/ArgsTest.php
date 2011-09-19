@@ -15,10 +15,17 @@ class ArgstTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(true);
     }
 
-    public function testSimpleInput()
+    public function simpleInputDataProvider()
     {
-        $actual   = $this->args->decode("-l");
-        $expected = array('l' => true);
-        $this->assertEquals($expected, $actual);
+        return array(
+            array('-l', array('l' => true)),
+            array('-p', array('p' => true))
+        );
+    }
+
+    /** @dataProvider simpleInputDataProvider */
+    public function testSimpleInput($input, $expected)
+    {
+        $this->assertEquals($expected, $this->args->decode($input));
     }
 }
