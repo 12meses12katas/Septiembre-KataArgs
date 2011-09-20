@@ -42,6 +42,10 @@ public class CommandLineParser {
                 type = new StringFlag();
                 break;
 
+            case 'i':
+                type = new IntegerFlag();
+                break;
+
             default:
                 throw new IllegalArgumentException("Unknown flag type: '" + typeName + "'");
         }
@@ -75,7 +79,9 @@ public class CommandLineParser {
     }
 
     private boolean isFlag(String argument) {
-        return argument.startsWith("-") && argument.length() == 2;
+        return argument.startsWith("-") &&
+                argument.length() == 2 &&
+                !Character.isDigit(argument.charAt(1));
     }
 
     public class UnknownFlag extends RuntimeException {

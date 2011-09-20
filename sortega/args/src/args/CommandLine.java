@@ -37,10 +37,21 @@ public class CommandLine {
     }
 
     public<T> T flagAs(char flag, Class<T> clazz) {
-        return (T) flag(flag);
+        Object value = flag(flag);
+        if (value.getClass().isAssignableFrom(clazz))
+            return (T) value;
+        else
+            throw new FlagTypeMismatch(flag, clazz, value.getClass());
     }
 
     public void setFlag(char flag, Object value) {
         flagValues.put(flag, value);
+    }
+
+    public class FlagTypeMismatch extends RuntimeException {
+        public FlagTypeMismatch(char flag, Class expected, Class found) {
+            super(String.format("Type mismatch for flag %c: expected %s, found %s",
+                    flag, expected, found));
+        }
     }
 }
