@@ -2,6 +2,7 @@ package args;
 
 import java.util.Iterator;
 
-interface FlagType {
-    Object parseValue(Iterator<String> argIt);
+interface FlagType<T> {
+    T parseValue(Iterator<String> argIt);
+    T defaultValue();
 }

@@ -19,8 +19,8 @@ public class CommandLineParserTest {
     public void parseFlag() {
         CommandLineParser parser = new CommandLineParser("lv");
         CommandLine commandLine = parser.parse(asArgs("-l"));
-        assertTrue("Flag l is set", commandLine.hashFlag('l'));
-        assertFalse("Flag v is unset", commandLine.hashFlag('v'));
+        assertTrue("Flag l is set", (Boolean) commandLine.flag('l'));
+        assertFalse("Flag v is unset", commandLine.flagAs('v', Boolean.class));
     }
 
     @Test(expected = CommandLineParser.UnknownFlag.class)
@@ -40,11 +40,12 @@ public class CommandLineParserTest {
     public void parseStringFlag() {
         CommandLineParser parser = new CommandLineParser("f=so=s");
         CommandLine line = parser.parse(asArgs("-f", "file.txt"));
-        assertEquals("", line.flagValue('o'));
-        assertEquals("file.txt", line.flagValue('f'));
+        assertEquals("", line.flagAs('o', String.class));
+        assertEquals("file.txt", line.flagAs('f', String.class));
         assertEquals("No arguments", 0, line.getArguments().size());
     }
 
+    // TODO: flagAs wrong type
     // TODO: default value for string flags
     // TODO: incorrect flag type
 

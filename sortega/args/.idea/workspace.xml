@@ -59,22 +59,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CommandLineParserTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CommandLineParserTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/args/CommandLineParserTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="1459" selection-end="1459" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="22" column="0" selection-start="662" selection-end="662" vertical-scroll-proportion="0.43514645">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandLine.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CommandLine.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/args/CommandLine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="24" selection-start="509" selection-end="509" vertical-scroll-proportion="0.49790794">
-              <folding />
+            <state line="22" column="62" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,9 +83,7 @@
         <entry file="file://$PROJECT_DIR$/src/args/CommandLineParser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="64" column="36" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -101,12 +99,12 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/test/args/CommandLineTest.java" />
-        <option value="$PROJECT_DIR$/test/args/CommandLineParserTest.java" />
-        <option value="$PROJECT_DIR$/src/args/BooleanFlag.java" />
-        <option value="$PROJECT_DIR$/src/args/StringFlag.java" />
         <option value="$PROJECT_DIR$/src/args/CommandLineParser.java" />
-        <option value="$PROJECT_DIR$/src/args/FlagType.java" />
+        <option value="$PROJECT_DIR$/test/args/CommandLineParserTest.java" />
         <option value="$PROJECT_DIR$/src/args/CommandLine.java" />
+        <option value="$PROJECT_DIR$/src/args/FlagType.java" />
+        <option value="$PROJECT_DIR$/src/args/StringFlag.java" />
+        <option value="$PROJECT_DIR$/src/args/BooleanFlag.java" />
       </list>
     </option>
   </component>
@@ -140,9 +138,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Favorites" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -199,17 +196,19 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="dynamic.classpath" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -357,7 +356,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -371,7 +370,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32997844" sideWeight="0.6706349" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32936507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -428,53 +427,47 @@
   <component name="editorHistoryManager">
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/classes.jar!/java/util/regex/Pattern.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="42" selection-start="1511" selection-end="1600" vertical-scroll-proportion="0.33333334">
+        <state line="37" column="42" selection-start="1511" selection-end="1600" vertical-scroll-proportion="0.33333334" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/args/CommandLineParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="36" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/args/StringFlag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="18" selection-start="225" selection-end="235" vertical-scroll-proportion="0.3451883">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/args/BooleanFlag.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0">
+        <state line="11" column="21" selection-start="234" selection-end="234" vertical-scroll-proportion="0.3451883">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/args/StringFlag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/args/CommandLineParserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1459" selection-end="1459" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/args/FlagType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="46" selection-start="110" selection-end="110" vertical-scroll-proportion="0.15690376">
+        <state line="4" column="34" selection-start="66" selection-end="66" vertical-scroll-proportion="0.12552302">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/args/CommandLineParser.java">
+    <entry file="file://$PROJECT_DIR$/src/args/CommandLine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="36" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.0">
+        <state line="22" column="62" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/args/CommandLine.java">
+    <entry file="file://$PROJECT_DIR$/test/args/CommandLineParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="24" selection-start="509" selection-end="509" vertical-scroll-proportion="0.49790794">
+        <state line="22" column="0" selection-start="662" selection-end="662" vertical-scroll-proportion="0.43514645">
           <folding />
         </state>
       </provider>
