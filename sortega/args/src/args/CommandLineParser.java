@@ -46,6 +46,10 @@ public class CommandLineParser {
                 type = new IntegerFlag();
                 break;
 
+            case 'l':
+                type = new ListFlag();
+                break;
+
             default:
                 throw new IllegalArgumentException("Unknown flag type: '" + typeName + "'");
         }

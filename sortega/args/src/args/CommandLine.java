@@ -38,7 +38,7 @@ public class CommandLine {
 
     public<T> T flagAs(char flag, Class<T> clazz) {
         Object value = flag(flag);
-        if (value.getClass().isAssignableFrom(clazz))
+        if (clazz.isAssignableFrom(value.getClass()))
             return (T) value;
         else
             throw new FlagTypeMismatch(flag, clazz, value.getClass());

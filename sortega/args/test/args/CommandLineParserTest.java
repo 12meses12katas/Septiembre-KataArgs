@@ -2,6 +2,10 @@ package args;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 import static java.util.Arrays.asList;
 import static org.junit.Assert.*;
 
@@ -62,11 +66,12 @@ public class CommandLineParserTest {
 
     @Test
     public void flagDefaultValues() {
-        CommandLineParser parser = new CommandLineParser("vf=sp=i");
+        CommandLineParser parser = new CommandLineParser("vf=sp=ig=l");
         CommandLine line = parser.parse(asArgs());
         assertEquals(Boolean.FALSE, line.flag('v'));
         assertEquals("", line.flag('f'));
         assertEquals(0, line.flag('p'));
+        assertEquals(Collections.emptyList(), line.flag('g'));
     }
 
     @Test
@@ -74,6 +79,13 @@ public class CommandLineParserTest {
         CommandLineParser parser = new CommandLineParser("vf=sp=i");
         CommandLine line = parser.parse(asArgs("-v", "-1", "-p", "1024"));
         assertEquals(asList("-1"), line.getArguments());
+    }
+
+    @Test
+    public void parseListOfStrings() {
+        CommandLineParser parser = new CommandLineParser("p=l");
+        CommandLine line = parser.parse(asArgs("-p", "a,b,c"));
+        assertEquals(asList("a", "b", "c"), line.flagAs('p', List.class));
     }
 
     public String[] asArgs(String... arguments) {
