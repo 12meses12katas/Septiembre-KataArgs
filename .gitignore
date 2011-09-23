@@ -1,0 +1,10 @@
+#
+# see http://help.github.com/ignore-files/
+#
+
+#	eclipse files	#
+#####################
+.classpath
+.project
+.settings/*
+target/*
