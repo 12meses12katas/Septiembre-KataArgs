@@ -23,6 +23,20 @@ class ArgsTest {
         Args args = new Args(schema, argList)
         
         assert "b" != args.nextFlag()
+        assert false == args.getValueOfFlag("f")
         assert false == args.getValueOfFlag("b")
+}
+
+    @Test
+    public void testTwoBooleanFlagsBothTrue() {
+        def schema = "bB,cB"
+        def argList = ["-b", "-c"]
+        Args args = new Args(schema, argList)
+        
+        assert "b" == args.nextFlag()
+        assert true == args.getValueOfFlag("b")
+        assert "c" == args.nextFlag()
+        assert true == args.getValueOfFlag("c")
+        assert false == args.getValueOfFlag("f")
 }
 }

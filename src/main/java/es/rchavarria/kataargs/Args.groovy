@@ -3,6 +3,7 @@ package es.rchavarria.kataargs
 class Args {
     private schema
     private argList
+    private currentArg
     
     public Args(def schema, def argList){
         this.schema = parseSchema(schema)
@@ -18,10 +19,12 @@ class Args {
 }
 
     def nextFlag(){
-        argList[0].substring(1)
+        currentArg = argList.remove(0)
+        currentArg.substring(1)
 }
     
     def getValueOfFlag(def flag){
-        schema[nextFlag()] != null 
+        def flagSchema = schema[flag]
+        flagSchema != null? currentArg.indexOf(flag) > 0 : false
 }
 }
