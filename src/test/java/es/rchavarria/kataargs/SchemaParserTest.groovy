@@ -26,5 +26,14 @@ class SchemaParserTest {
         assert ["f": "I"] == parser.toMap("fI") 
         assert ["f": "L"] == parser.toMap("fL") 
 }
+    
+    @Test
+    public void testTwoFlags(){
+        SchemaParser parser = new SchemaParser()
+        
+        assert ["b":"B", "c":"B"] == parser.toMap("bB,cB")
+        assert ["c":"B", "f":"I"] == parser.toMap("cB,fI")
+        assert ["f":"I", "g":"L"] == parser.toMap("fI,gL")
+}
 
 }

@@ -4,7 +4,9 @@ class SchemaParser {
 
     def toMap(def schema){
         def map = [:]
-        map[schema[0]] = schema[1]
+        def flagsList = schema.split(",")
+        flagsList.each { map[it[0]] = it[1] }
+        
         map
 }
 }
