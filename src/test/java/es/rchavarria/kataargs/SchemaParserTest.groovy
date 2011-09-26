@@ -35,5 +35,16 @@ class SchemaParserTest {
         assert ["c":"B", "f":"I"] == parser.toMap("cB,fI")
         assert ["f":"I", "g":"L"] == parser.toMap("fI,gL")
 }
+    
+    @Test
+    public void testNFlags(){
+        SchemaParser parser = new SchemaParser()
+        
+        def map = ["a":"A", "b":"B", "c":"C"] 
+        assert map == parser.toMap("aA,bB,cC")
+        map.d = "D"
+        map.e = "E"
+        assert map == parser.toMap("aA,bB,cC,dD,eE")
+}
 
 }
