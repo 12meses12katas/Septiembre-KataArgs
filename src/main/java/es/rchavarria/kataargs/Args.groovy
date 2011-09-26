@@ -1,9 +1,9 @@
 package es.rchavarria.kataargs
 
 class Args {
-    private schema
-    private argList
-    private currentArg
+    private Map schema
+    private List argList
+    private String currentArg
     
     public Args(def schema, def argList){
         this.schema = parseSchema(schema)
@@ -20,11 +20,15 @@ class Args {
 
     def nextFlag(){
         currentArg = argList.remove(0)
-        currentArg.substring(1)
+        extractFlag(currentArg)
 }
     
+    private extractFlag(def argument){
+        argument.substring(1)
+}
+
     def getValueOfFlag(def flag){
-        def flagSchema = schema[flag]
-        flagSchema != null? currentArg.indexOf(flag) > 0 : false
+        def flagInSchema = schema[flag]
+        flagInSchema != null? currentArg.indexOf(flag) > 0 : false
 }
 }

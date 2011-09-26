@@ -39,4 +39,17 @@ class ArgsTest {
         assert true == args.getValueOfFlag("c")
         assert false == args.getValueOfFlag("f")
 }
+
+    @Test
+    public void testTwoBooleanFlagsOnlyOneTrue() {
+        def schema = "bB,cB"
+        def argList = ["-c", "-f"]
+        Args args = new Args(schema, argList)
+        
+        assert "c" == args.nextFlag()
+        assert true == args.getValueOfFlag("c")
+        assert "f" == args.nextFlag()
+        assert false == args.getValueOfFlag("f")
+        assert false == args.getValueOfFlag("b")
+}
 }
