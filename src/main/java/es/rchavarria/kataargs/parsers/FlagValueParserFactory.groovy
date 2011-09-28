@@ -3,6 +3,13 @@ package es.rchavarria.kataargs.parsers
 class FlagValueParserFactory {
 
     static def createParser(def flag){
-        new BooleanValueParser()
+        FlagValueParser parser = null
+        
+        if("b".equals(flag))
+            parser = new BooleanValueParser()
+        if("i".equals(flag))
+            parser = new IntegerValueParser()
+            
+        parser
     }
 }

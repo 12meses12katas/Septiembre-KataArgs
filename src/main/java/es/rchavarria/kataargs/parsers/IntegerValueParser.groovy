@@ -1,9 +1,9 @@
 package es.rchavarria.kataargs.parsers
 
-class BooleanValueParser implements FlagValueParser {
+class IntegerValueParser implements FlagValueParser {
 
     @Override
     def parse(def flag, def argList) {
-        true
+        return 0
     }
 }
