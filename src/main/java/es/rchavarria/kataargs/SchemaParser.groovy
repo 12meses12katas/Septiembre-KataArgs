@@ -8,5 +8,5 @@ class SchemaParser {
         flagsList.each { map[it[0]] = it[1] }
         
         map
-}
+    }
 }

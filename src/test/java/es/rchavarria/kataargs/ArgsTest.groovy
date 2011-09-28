@@ -14,7 +14,7 @@ class ArgsTest {
         
         assert "b" == args.nextFlag()
         assert true == args.getValueOfFlag("b")
-}
+    }
 
     @Test
     public void testOneBooleanFlagFalse() {
@@ -25,7 +25,7 @@ class ArgsTest {
         assert "b" != args.nextFlag()
         assert false == args.getValueOfFlag("f")
         assert false == args.getValueOfFlag("b")
-}
+    }
 
     @Test
     public void testTwoBooleanFlagsBothTrue() {
@@ -38,7 +38,7 @@ class ArgsTest {
         assert "c" == args.nextFlag()
         assert true == args.getValueOfFlag("c")
         assert false == args.getValueOfFlag("f")
-}
+    }
 
     @Test
     public void testTwoBooleanFlagsOnlyOneTrue() {
@@ -51,5 +51,15 @@ class ArgsTest {
         assert "f" == args.nextFlag()
         assert false == args.getValueOfFlag("f")
         assert false == args.getValueOfFlag("b")
-}
+    }
+
+    @Test
+    public void testOneIntegerFlag() {
+        def schema = "iI"
+        def argList = ["-i", "5"]
+        Args args = new Args(schema, argList)
+        
+        assert "i" == args.nextFlag()
+        assert 5 == args.getValueOfFlag("i")
+    }
 }
