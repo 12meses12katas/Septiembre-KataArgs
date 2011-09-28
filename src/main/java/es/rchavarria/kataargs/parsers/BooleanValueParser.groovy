@@ -4,6 +4,8 @@ class BooleanValueParser implements FlagValueParser {
 
     @Override
     def parse(def flag, def argList) {
-        true
+        def expectedFlagText = "-" + flag
+        
+        argList.indexOf(expectedFlagText) >= 0
     }
 }
