@@ -9,11 +9,11 @@ class FlagValueParserFactoryTest {
 
     @Test
     public void testBFlagReturnsBooleanParser() {
-        assert FlagValueParserFactory.createParser("b") instanceof BooleanValueParser 
+        assert FlagValueParserFactory.createParser("B") instanceof BooleanValueParser 
     }
 
     @Test
     public void testIFlagReturnsIntegerParser() {
-        assert FlagValueParserFactory.createParser("i") instanceof IntegerValueParser 
+        assert FlagValueParserFactory.createParser("I") instanceof IntegerValueParser 
     }
 }

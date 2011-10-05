@@ -5,9 +5,9 @@ class FlagValueParserFactory {
     static def createParser(def flag){
         FlagValueParser parser = null
         
-        if("b".equals(flag))
+        if("B".equals(flag))
             parser = new BooleanValueParser()
-        if("i".equals(flag))
+        if("I".equals(flag))
             parser = new IntegerValueParser()
             
         parser

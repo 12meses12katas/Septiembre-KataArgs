@@ -4,14 +4,18 @@ class Args {
     private Map schema
     private List argList
     private String currentArg
+    private int nextArgIndex
     
     public Args(def schema, def argList){
         this.schema = new SchemaParser().toMap(schema)
         this.argList = argList
+        nextArgIndex = 0
     }
     
     def nextFlag(){
-        currentArg = argList.remove(0)
+        currentArg = argList[nextArgIndex]
+        nextArgIndex++
+        
         extractFlag(currentArg)
     }
     
@@ -20,7 +24,12 @@ class Args {
     }
 
     def getValueOfFlag(def flag){
-        def flagInSchema = schema[flag]
-        flagInSchema != null? currentArg.indexOf(flag) > 0 : false
+        def parser = schema[flag]
+        
+        if(parser != null){
+            return parser.parse(flag, argList) 
+        } else {
+            return false
+        }
     }
 }

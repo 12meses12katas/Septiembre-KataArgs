@@ -2,6 +2,8 @@ package es.rchavarria.kataargs;
 
 import static org.junit.Assert.*;
 
+import es.rchavarria.kataargs.parsers.BooleanValueParser;
+import es.rchavarria.kataargs.parsers.IntegerValueParser 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test 
@@ -20,31 +22,38 @@ class SchemaParserTest {
     public void testOneFlag(){
         SchemaParser parser = new SchemaParser()
 
-        assert ["b": "B"] == parser.toMap("bB") 
-        assert ["c": "B"] == parser.toMap("cB") 
-        assert ["f": "B"] == parser.toMap("fB") 
-        assert ["f": "I"] == parser.toMap("fI") 
-        assert ["f": "L"] == parser.toMap("fL") 
-}
+        checkFlagAndParser("b", BooleanValueParser.class, parser.toMap("bB"))
+        checkFlagAndParser("c", BooleanValueParser.class, parser.toMap("cB"))
+        checkFlagAndParser("c", IntegerValueParser.class, parser.toMap("cI"))
+        checkFlagAndParser("f", IntegerValueParser.class, parser.toMap("fI"))
+    }
+    
+    private void checkFlagAndParser(def flag, def parserClass, def map){
+        assert parserClass.isInstance(map[flag])
+    }
     
     @Test
     public void testTwoFlags(){
         SchemaParser parser = new SchemaParser()
         
-        assert ["b":"B", "c":"B"] == parser.toMap("bB,cB")
-        assert ["c":"B", "f":"I"] == parser.toMap("cB,fI")
-        assert ["f":"I", "g":"L"] == parser.toMap("fI,gL")
+        def scheme1 = "bB,cB"
+        checkFlagAndParser("b", BooleanValueParser.class, parser.toMap(scheme1))
+        checkFlagAndParser("c", BooleanValueParser.class, parser.toMap(scheme1))
+
+        def scheme2 = "cB,fI"
+        checkFlagAndParser("c", BooleanValueParser.class, parser.toMap(scheme2))
+        checkFlagAndParser("f", IntegerValueParser.class, parser.toMap(scheme2))
 }
     
     @Test
     public void testNFlags(){
         SchemaParser parser = new SchemaParser()
         
-        def map = ["a":"A", "b":"B", "c":"C"] 
-        assert map == parser.toMap("aA,bB,cC")
-        map.d = "D"
-        map.e = "E"
-        assert map == parser.toMap("aA,bB,cC,dD,eE")
-}
+        def scheme = "aB,bI,cB,dI"
+        checkFlagAndParser("a", BooleanValueParser.class, parser.toMap(scheme))
+        checkFlagAndParser("b", IntegerValueParser.class, parser.toMap(scheme))
+        checkFlagAndParser("c", BooleanValueParser.class, parser.toMap(scheme))
+        checkFlagAndParser("d", IntegerValueParser.class, parser.toMap(scheme))
+    }
 
 }
