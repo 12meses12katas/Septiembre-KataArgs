@@ -85,21 +85,6 @@ class ArgsTest {
     }
 
     @Test
-    public void testIntegerAndBooleanFlags() {
-        def schema = "iI,bB,jI,cB"
-        def argList = ["-i", "5", "-b"]
-        Args args = new Args(schema, argList)
-        
-        assert "i" == args.nextFlag()
-        assert 5 == args.getValueOfFlag("i")
-        assert "b" == args.nextFlag()
-        assert true == args.getValueOfFlag("b")
-        
-        assert 0 == args.getValueOfFlag("j")
-        assert false == args.getValueOfFlag("c")
-    }
-
-    @Test
     public void testOneFlagString() {
         def schema = "sS"
         def argList = ["-s", "this-is-a-string"]
@@ -107,5 +92,23 @@ class ArgsTest {
 
         assert "s" == args.nextFlag()
         assert "this-is-a-string" == args.getValueOfFlag("s")        
+    }
+    
+    @Test
+    public void testDifferentFlags() {
+        def schema = "iI,bB,jI,cB,sS,tS"
+        def argList = ["-i", "5", "-b", "-s", "this-is-a-string"]
+        Args args = new Args(schema, argList)
+        
+        assert "i" == args.nextFlag()
+        assert 5 == args.getValueOfFlag("i")
+        assert "b" == args.nextFlag()
+        assert true == args.getValueOfFlag("b")
+        assert "s" == args.nextFlag()
+        assert "this-is-a-string" == args.getValueOfFlag("s")
+
+        assert false == args.getValueOfFlag("c")
+        assert 0 == args.getValueOfFlag("j")
+        assert "" == args.getValueOfFlag("t")
     }
 }
