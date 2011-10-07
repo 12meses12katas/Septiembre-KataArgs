@@ -1,13 +1,16 @@
 package es.rchavarria.kataargs.parsers
 
-class IntegerValueParser implements FlagValueParser {
+import es.rchavarria.kataargs.exceptions.FlagValueNotPresentException;
 
+class IntegerValueParser implements FlagValueParser {
+    private static Integer DEFAULT_VALUE = 0
+    
     @Override
     def parse(def flag, def argList) {
         def expectedFlag = "-" + flag
         def idx = argList.indexOf(expectedFlag)
         if(idx < 0)
-            throw new FlagNotPresentException("Flag ${flag} not present")
+            return DEFAULT_VALUE
         
         try {
             def value = argList[idx + 1]

@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 import org.junit.Before 
 import org.junit.Test;
 
+import es.rchavarria.kataargs.exceptions.FlagValueNotPresentException;
+
 class IntegerValueParserTest {
 
     private FlagValueParser parser
@@ -20,9 +22,8 @@ class IntegerValueParserTest {
         assert -5 == parser.parse("i", ["-i", "-5"])
     }
     
-    @Test(expected=FlagNotPresentException)
-    public void testFlagNotPresent(){
-        parser.parse("i", ["-d", "5"])
+    public void testFlagNotPresentReturnsDefaultValue(){
+        assert 0 == parser.parse("i", ["-d", "5"])
     }
     
     @Test(expected=FlagValueNotPresentException)

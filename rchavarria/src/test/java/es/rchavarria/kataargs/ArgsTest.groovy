@@ -18,18 +18,18 @@ class ArgsTest {
 
     @Test
     public void testOneBooleanFlagFalse() {
-        def schema = "bB"
+        def schema = "bB,fB"
         def argList = ["-f"]
         Args args = new Args(schema, argList)
         
         assert "b" != args.nextFlag()
-        assert false == args.getValueOfFlag("f")
+        assert true == args.getValueOfFlag("f")
         assert false == args.getValueOfFlag("b")
     }
 
     @Test
     public void testTwoBooleanFlagsBothTrue() {
-        def schema = "bB,cB"
+        def schema = "bB,cB,fB"
         def argList = ["-b", "-c"]
         Args args = new Args(schema, argList)
         
@@ -42,14 +42,14 @@ class ArgsTest {
 
     @Test
     public void testTwoBooleanFlagsOnlyOneTrue() {
-        def schema = "bB,cB"
+        def schema = "bB,cB,fB"
         def argList = ["-c", "-f"]
         Args args = new Args(schema, argList)
         
         assert "c" == args.nextFlag()
         assert true == args.getValueOfFlag("c")
         assert "f" == args.nextFlag()
-        assert false == args.getValueOfFlag("f")
+        assert true == args.getValueOfFlag("f")
         assert false == args.getValueOfFlag("b")
     }
 
@@ -61,5 +61,26 @@ class ArgsTest {
         
         assert "i" == args.nextFlag()
         assert 5 == args.getValueOfFlag("i")
+    }
+
+    @Test
+    public void testOneIntegerFlagNotPresent() {
+        def schema = "iI,jI"
+        def argList = ["-i", "5"]
+        Args args = new Args(schema, argList)
+        
+        assert 0 == args.getValueOfFlag("j")
+    }
+
+    @Test
+    public void testTwoIntegerFlags() {
+        def schema = "iI,jI"
+        def argList = ["-i", "5", "-j", "-5"]
+        Args args = new Args(schema, argList)
+        
+        assert "i" == args.nextFlag()
+        assert 5 == args.getValueOfFlag("i")
+        assert "j" == args.nextFlag()
+        assert -5 == args.getValueOfFlag("j")
     }
 }
