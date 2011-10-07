@@ -98,4 +98,14 @@ class ArgsTest {
         assert 0 == args.getValueOfFlag("j")
         assert false == args.getValueOfFlag("c")
     }
+
+    @Test
+    public void testOneFlagString() {
+        def schema = "sS"
+        def argList = ["-s", "this-is-a-string"]
+        Args args = new Args(schema, argList)
+
+        assert "s" == args.nextFlag()
+        assert "this-is-a-string" == args.getValueOfFlag("s")        
+    }
 }

@@ -16,4 +16,9 @@ class FlagValueParserFactoryTest {
     public void testIFlagReturnsIntegerParser() {
         assert FlagValueParserFactory.createParser("I") instanceof IntegerValueParser 
     }
+
+    @Test
+    public void testSFlagReturnsStringParser() {
+        assert FlagValueParserFactory.createParser("S") instanceof StringValueParser 
+    }
 }

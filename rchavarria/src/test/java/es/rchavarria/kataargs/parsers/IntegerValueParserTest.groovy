@@ -22,6 +22,7 @@ class IntegerValueParserTest {
         assert -5 == parser.parse("i", ["-i", "-5"])
     }
     
+    @Test
     public void testFlagNotPresentReturnsDefaultValue(){
         assert 0 == parser.parse("i", ["-d", "5"])
     }
