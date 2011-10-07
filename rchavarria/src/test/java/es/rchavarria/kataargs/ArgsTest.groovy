@@ -83,4 +83,19 @@ class ArgsTest {
         assert "j" == args.nextFlag()
         assert -5 == args.getValueOfFlag("j")
     }
+
+    @Test
+    public void testIntegerAndBooleanFlags() {
+        def schema = "iI,bB,jI,cB"
+        def argList = ["-i", "5", "-b"]
+        Args args = new Args(schema, argList)
+        
+        assert "i" == args.nextFlag()
+        assert 5 == args.getValueOfFlag("i")
+        assert "b" == args.nextFlag()
+        assert true == args.getValueOfFlag("b")
+        
+        assert 0 == args.getValueOfFlag("j")
+        assert false == args.getValueOfFlag("c")
+    }
 }
