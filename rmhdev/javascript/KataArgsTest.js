@@ -95,7 +95,7 @@ KataArgsTest.prototype.getValuesForListTypeReturnsDefaultList = function() {
     expectThat(parser.getValue("g"), elementsAre(['a', 'b', 'c', 'd', 'e']));
 }
 
-KataArgsTest.prototype.getValuesForUnexpertedArgReturnsError = function() {
+KataArgsTest.prototype.getValuesForUnexpectedArgReturnsError = function() {
     var myFunction = function() {
         var schema = new Schema();
         schema.addInteger("p", 123);

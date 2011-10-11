@@ -46,8 +46,8 @@ multivac:javascript rmhdev$ gjstest --js_files=Parser.js,Schema.js,KataArgsTest.
 [       OK ] KataArgsTest.getValuesForUnorderedTypesReturnsCorrectValues (1 ms)
 [ RUN      ] KataArgsTest.getValuesForListTypeReturnsDefaultList
 [       OK ] KataArgsTest.getValuesForListTypeReturnsDefaultList (3 ms)
-[ RUN      ] KataArgsTest.getValuesForUnexpertedArgReturnsError
-[       OK ] KataArgsTest.getValuesForUnexpertedArgReturnsError (1 ms)
+[ RUN      ] KataArgsTest.getValuesForUnexpectedArgReturnsError
+[       OK ] KataArgsTest.getValuesForUnexpectedArgReturnsError (1 ms)
 [----------]
 
 [  PASSED  ]
